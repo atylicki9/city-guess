@@ -12,7 +12,7 @@ import {
 import { Logo } from "./Logo"
 import { NavBar } from "./components/navbar"
 import { Map } from "./components/map"
-import { GuessInput } from "./components/input/guessinput"
+import { GuessInput } from "./components/input"
 
 export const App = () => (
   <ChakraProvider theme={theme}>
