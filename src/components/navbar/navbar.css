@@ -1,0 +1,13 @@
+/*nav bar styles*/
+
+.navbar-container {
+    padding: 10px 0px;
+}
+
+.navbar-container h1 {
+    font-weight: bolder;
+}
+
+.navbar-box {
+    width: 33%;
+}
