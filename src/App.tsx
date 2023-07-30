@@ -12,13 +12,15 @@ import {
 import { Logo } from "./Logo"
 import { NavBar } from "./components/navbar"
 import { Map } from "./components/map"
+import { GuessInput } from "./components/input/guessinput"
 
 export const App = () => (
   <ChakraProvider theme={theme}>
     <Box textAlign="center" fontSize="xl">
       <NavBar/>
-      <Grid minH="95vh" p={3}>
+      <Grid minH="93vh" p={10}>
         <Map/>
+        <GuessInput />
       </Grid>
     </Box>
   </ChakraProvider>

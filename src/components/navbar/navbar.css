@@ -10,4 +10,6 @@
 
 .navbar-box {
     width: 33%;
+    height: 100%;
+    padding-top: 3vh;
 }
