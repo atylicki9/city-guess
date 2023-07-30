@@ -1,4 +1,4 @@
-import { Box, Flex, Button, Input, Spacer, color, background } from '@chakra-ui/react'
+import {Flex, Button, Input} from '@chakra-ui/react'
 import './guessinput.css';
 
 export function GuessInput() {
