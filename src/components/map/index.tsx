@@ -1,36 +1,8 @@
 import './map.css';
 import React, { useEffect } from 'react';
 import mapboxgl, { Map } from 'mapbox-gl';
-import citiesJson from './cities.json'
+import {getRandomCity, calculateBoundingBox, Coords} from '../../utility/mapUtility'
 
-interface Coords {
-    latitude: number;
-    longitude: number;
-  }
-
-interface City {
-    name: string;
-    latitude: number;
-    longitude: number;
-  }
-
-  function getRandomCity(): City | null {
-
-    const randomIndex = Math.floor(Math.random() * citiesJson.length);
-    return citiesJson[randomIndex];
-
-  }
-  
-function calculateBoundingBox(coords: Coords): { north: number; south: number; east: number; west: number } {
-    const { latitude, longitude } = coords;
-
-    const north = latitude + 0.3;
-    const south = latitude - 0.3;
-    const east = longitude + 0.3;
-    const west = longitude - 0.3;
-
-    return { north, south, east, west };
-}
 
 const MapboxMap: React.FC = () => {
 
