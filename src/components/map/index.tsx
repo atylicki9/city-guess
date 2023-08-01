@@ -3,16 +3,16 @@ import React, { useEffect } from 'react';
 import mapboxgl, { Map } from 'mapbox-gl';
 import {getRandomCity, calculateBoundingBox, Coords} from '../../utility/mapUtility'
 
+export let currentCity  = getRandomCity()
 
 const MapboxMap: React.FC = () => {
 
-    const city  = getRandomCity()
-    if (city == null)
+    if (currentCity == null)
     {
         throw new Error("Unable to find City in cities.json")
     }
 
-    const inputCoords: Coords = { latitude: city.latitude, longitude: city.longitude };
+    const inputCoords: Coords = { latitude: currentCity.latitude, longitude: currentCity.longitude };
     const bounds = calculateBoundingBox(inputCoords);
     console.log(bounds);
 
