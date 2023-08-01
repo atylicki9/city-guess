@@ -1,10 +1,24 @@
 import './map.css';
 import React, { useEffect } from 'react';
 import mapboxgl, { Map } from 'mapbox-gl';
+import citiesJson from './cities.json'
 
 interface Coords {
     latitude: number;
     longitude: number;
+  }
+
+interface City {
+    name: string;
+    latitude: number;
+    longitude: number;
+  }
+
+  function getRandomCity(): City | null {
+
+    const randomIndex = Math.floor(Math.random() * citiesJson.length);
+    return citiesJson[randomIndex];
+
   }
   
 function calculateBoundingBox(coords: Coords): { north: number; south: number; east: number; west: number } {
@@ -20,7 +34,13 @@ function calculateBoundingBox(coords: Coords): { north: number; south: number; e
 
 const MapboxMap: React.FC = () => {
 
-    const inputCoords: Coords = { latitude: 40.7128, longitude: -74.0060 };
+    const city  = getRandomCity()
+    if (city == null)
+    {
+        throw new Error("Unable to find City in cities.json")
+    }
+
+    const inputCoords: Coords = { latitude: city.latitude, longitude: city.longitude };
     const bounds = calculateBoundingBox(inputCoords);
     console.log(bounds);
 
@@ -40,4 +60,3 @@ const MapboxMap: React.FC = () => {
   };
 
   export default MapboxMap;
-  
