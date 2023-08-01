@@ -29,15 +29,15 @@ const MapboxMap: React.FC = () => {
       const map: Map = new mapboxgl.Map({
         container: 'map', 
         style: 'mapbox://styles/atylicki/clkq8f6ac01i401p21tpg1krd',
-        //center: [-74.0060, 40.7128],
         zoom: 7,
         maxBounds: [[bounds.west, bounds.south], [bounds.east, bounds.north]]
       });
   
-      return () => map.remove(); // Clean up the map instance when the component is unmounted
+      return () => map.remove();
     }, []);
   
     return <div id="map" className='mapboxMap'/>;
   };
 
   export default MapboxMap;
+  
