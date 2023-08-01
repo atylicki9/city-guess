@@ -5,7 +5,7 @@ import {
   theme,
 } from "@chakra-ui/react"
 import { NavBar } from "./components/navbar"
-import { Map } from "./components/map"
+import MapboxMap from "./components/map"
 import { GuessInput } from "./components/input"
 
 export const App = () => (
@@ -13,7 +13,7 @@ export const App = () => (
     <Box textAlign="center" fontSize="xl">
       <NavBar/>
       <Grid minH="93vh" p={10}>
-        <Map/>
+        <MapboxMap/>
         <GuessInput />
       </Grid>
     </Box>

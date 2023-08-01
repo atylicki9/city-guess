@@ -1,12 +1,43 @@
 import './map.css';
-import { Box } from '@chakra-ui/react'
+import React, { useEffect } from 'react';
+import mapboxgl, { Map } from 'mapbox-gl';
 
-export function Map() {
-    return (
-        <Box>
-            <iframe className='map'
-                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.375295414770757!3d6.5276316452784755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1567723392506!5m2!1sen!2sng'
-            />
-        </Box>
-    );
+interface Coords {
+    latitude: number;
+    longitude: number;
   }
+  
+function calculateBoundingBox(coords: Coords): { north: number; south: number; east: number; west: number } {
+    const { latitude, longitude } = coords;
+
+    const north = latitude + 0.3;
+    const south = latitude - 0.3;
+    const east = longitude + 0.3;
+    const west = longitude - 0.3;
+
+    return { north, south, east, west };
+}
+
+const MapboxMap: React.FC = () => {
+
+    const inputCoords: Coords = { latitude: 40.7128, longitude: -74.0060 };
+    const bounds = calculateBoundingBox(inputCoords);
+    console.log(bounds);
+
+    useEffect(() => {
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYXR5bGlja2kiLCJhIjoiY2xrcHplOWRmMW9jejNrcjF5Zm5xcHJyMyJ9.7IpsnYSPH9TqHColAwrXbg'; // make secure key
+      const map: Map = new mapboxgl.Map({
+        container: 'map', 
+        style: 'mapbox://styles/atylicki/clkq8f6ac01i401p21tpg1krd',
+        //center: [-74.0060, 40.7128],
+        zoom: 7,
+        maxBounds: [[bounds.west, bounds.south], [bounds.east, bounds.north]]
+      });
+  
+      return () => map.remove(); // Clean up the map instance when the component is unmounted
+    }, []);
+  
+    return <div id="map" className='mapboxMap'/>;
+  };
+
+  export default MapboxMap;
