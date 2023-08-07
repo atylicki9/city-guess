@@ -28,7 +28,7 @@
   { "name": "Buenos Aires", "latitude": -34.6075682, "longitude": -58.4370894 },
   { "name": "Los Angeles", "latitude": 34.0536909, "longitude": -118.2427666 },
   { "name": "Bangkok", "latitude": 13.7542529, "longitude": 100.493087 },
-  { "name": "São Paulo - São Paulo", "latitude": -23.5506507, "longitude": -46.6333824 },
+  { "name": "São Paulo - Sao Paulo", "latitude": -23.5506507, "longitude": -46.6333824 },
   { "name": "Lagos", "latitude": 6.4550575, "longitude": 3.3941795 },
   { "name": "Shenzhen", "latitude": 22.555454, "longitude": 114.0543297 },
   { "name": "Istanbul", "latitude": 41.0096334, "longitude": 28.9651646 },

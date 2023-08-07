@@ -1,30 +1,26 @@
-import citiesJson from '../data/cities.json'
+// todo merge with city
+
+import mapboxgl from "mapbox-gl";
+import { City } from "./city";
 
 export interface Coords {
     latitude: number;
     longitude: number;
   }
+  
+function calculateBoundingBox(city: City): mapboxgl.LngLatBoundsLike {
 
-export interface City {
-    name: string;
-    latitude: number;
-    longitude: number;
+  if (city.latitude == undefined || city.longitude == undefined)
+  {
+    throw Error(`There is an underfined coordinate in ${city.name}`)
   }
 
-function getRandomCity(): City | null {
-    const randomIndex = Math.floor(Math.random() * citiesJson.length);
-    return citiesJson[randomIndex];
-}
-  
-function calculateBoundingBox(coords: Coords): { north: number; south: number; east: number; west: number } {
-    const { latitude, longitude } = coords;
+    const north = city.latitude + 0.3;
+    const south = city.latitude - 0.3;
+    const east = city.longitude + 0.3;
+    const west = city.longitude - 0.3;
 
-    const north = latitude + 0.3;
-    const south = latitude - 0.3;
-    const east = longitude + 0.3;
-    const west = longitude - 0.3;
-
-    return { north, south, east, west };
+    return [[west, south], [east, north]];
 }
 
-export { getRandomCity, calculateBoundingBox }
+export {  calculateBoundingBox }
