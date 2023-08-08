@@ -1,7 +1,7 @@
 import './map.css';
 import React, { useEffect } from 'react';
 import mapboxgl, { Map } from 'mapbox-gl';
-import {calculateBoundingBox, Coords} from '../../utility/mapUtility'
+import {calculateBoundingBox} from '../../utility/mapUtility'
 import { City } from '../../utility/city';
 
 interface Props {
@@ -15,7 +15,9 @@ const MapboxMap: React.FC<Props> = (props: Props) => {
       throw Error(`There is an underfined coordinate in ${props.city.name}`)
     }
 
+    
     useEffect(() => {
+      console.log(`Current City to be Mapped: ${props.city.name}`)
       mapboxgl.accessToken = 'pk.eyJ1IjoiYXR5bGlja2kiLCJhIjoiY2xrcHplOWRmMW9jejNrcjF5Zm5xcHJyMyJ9.7IpsnYSPH9TqHColAwrXbg'; // make secure key
       const map: Map = new mapboxgl.Map({
         container: 'map', 
