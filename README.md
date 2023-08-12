@@ -5,7 +5,7 @@ My first venture into Typescript and React. App inspired by GeoGuesser that uses
 This app was built using React and Typescript.
 
 ## UI
-	![City Guess UI, a map of New York City with Game Title, Current Score, and an input for user's guess.](./City-Guess-UI.png)
+	![City Guess UI](City-Guess-UI.png)
 
 ## Local Running
 ### Map Box API 
