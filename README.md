@@ -4,6 +4,9 @@
 My first venture into Typescript and React. App inspired by GeoGuesser that uses street grids and landmarks on a map to make a guessing game for Global Cities.
 This app was built using React and Typescript.
 
+## UI
+	![City Guess UI, a map of New York City with Game Title, Current Score, and an input for user's guess.](City-Guess-UI.jpg)
+
 ## Local Running
 ### Map Box API 
 Create a [Map Box](https://www.mapbox.com/) account if you do not already have one. 
