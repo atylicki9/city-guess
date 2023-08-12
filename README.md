@@ -1,7 +1,7 @@
 # City Guess by Aaron Tylicki
 
 ## About
-App inspired by GeoGuesser that uses street grids and landmarks on a map to make a guessing game for Global Cities.
+My first venture into Typescript and React. App inspired by GeoGuesser that uses street grids and landmarks on a map to make a guessing game for Global Cities.
 This app was built using React and Typescript.
 
 ## Local Running
