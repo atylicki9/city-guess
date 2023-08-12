@@ -1,1 +1,1 @@
-export const mapboxApiToken = 'insertYourAPIKeyHere';
+export const mapboxApiToken = 'Insert Your API Key Here';
