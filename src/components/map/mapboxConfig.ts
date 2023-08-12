@@ -1,1 +1,0 @@
-export const mapboxApiToken = 'Insert Your API Key Here';
