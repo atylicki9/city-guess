@@ -3,7 +3,6 @@
 import mapboxgl from "mapbox-gl";
 import { City } from "./city";
 
-
 export interface Coords {
     latitude: number;
     longitude: number;

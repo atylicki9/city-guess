@@ -1,13 +1,12 @@
 import {Flex, Button, Input} from '@chakra-ui/react'
 import './guessinput.css';
-import React, {useContext, useState} from 'react';
+import React, { useContext } from 'react';
 import { useToast } from '@chakra-ui/react'
-import { City } from '../../utility/city';
 import GameContext from '../../context/gameContext';
 
 export function GuessInput() {
 
-    const { city, score, updateCity, updateScore } = useContext(GameContext);
+    const { city, updateCity, updateScore } = useContext(GameContext);
 
     let [value, setValue] = React.useState('')
     const updateText = (event: { target: { value: React.SetStateAction<string>; }; }) => setValue(event.target.value)
@@ -70,3 +69,4 @@ export function GuessInput() {
         </Flex>
     )
   }
+  

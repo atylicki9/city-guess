@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react';
+import { createContext } from 'react';
 import { IGame } from '../@types/game';
 
 const newGameState: IGame =
