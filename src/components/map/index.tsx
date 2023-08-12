@@ -8,7 +8,7 @@ import GameContext from '../../context/gameContext';
 
 const MapboxMap: React.FC = () => {
   
-  const { city } = useContext(GameContext);
+  const { city, updateCity } = useContext(GameContext);
     if (city.latitude == undefined || city.longitude == undefined)
     {
       throw Error(`There is an underfined coordinate in ${city.name}`)
@@ -25,7 +25,7 @@ const MapboxMap: React.FC = () => {
       });
   
       return () => map.remove();
-    }, [city]);
+    }, [updateCity]);
   
     return <div id="map" className='mapboxMap'/>;
   };

@@ -25,8 +25,8 @@ export function GuessInput() {
             
         if (city?.name.includes(value)) {
             toast({
-                title: 'Correct! +1000 points.',
-                description: "Congrats, that was the correct answer!",
+                title: '+1000 points.',
+                description: "Correct!, that was the correct answer!",
                 status: 'success',
                 duration: 5000,
                 isClosable: true,
@@ -35,10 +35,8 @@ export function GuessInput() {
             updateScore(1000)
         }
         else {
-            
-            console.log(`WRONG, correct answer was ${city?.name}`)
             toast({
-                title: 'Wrong. -100 points',
+                title: '-100 points',
                 description: "Read a book loser.",
                 status: 'error',
                 duration: 5000,
