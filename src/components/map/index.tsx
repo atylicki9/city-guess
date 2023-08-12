@@ -4,7 +4,7 @@ import mapboxgl, { Map } from 'mapbox-gl';
 import {calculateBoundingBox} from '../../utility/mapUtility'
 import { City } from '../../utility/city';
 import GameContext from '../../context/gameContext';
-import { mapboxApiToken } from '../../mapboxConfig';
+import { mapboxApiToken } from './mapboxConfig';
 
 
 const MapboxMap: React.FC = () => {
