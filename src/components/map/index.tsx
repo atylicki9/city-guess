@@ -4,6 +4,7 @@ import mapboxgl, { Map } from 'mapbox-gl';
 import {calculateBoundingBox} from '../../utility/mapUtility'
 import { City } from '../../utility/city';
 import GameContext from '../../context/gameContext';
+import { mapboxApiToken } from '../../mapboxConfig';
 
 
 const MapboxMap: React.FC = () => {
@@ -16,7 +17,7 @@ const MapboxMap: React.FC = () => {
     
     useEffect(() => {
       console.log(`Current City to be Mapped: ${city.name}`)
-      mapboxgl.accessToken = 'pk.eyJ1IjoiYXR5bGlja2kiLCJhIjoiY2xrcHplOWRmMW9jejNrcjF5Zm5xcHJyMyJ9.7IpsnYSPH9TqHColAwrXbg'; // make secure key
+      mapboxgl.accessToken = mapboxApiToken; // make secure key
       const map: Map = new mapboxgl.Map({
         container: 'map', 
         style: 'mapbox://styles/atylicki/clkq8f6ac01i401p21tpg1krd',
