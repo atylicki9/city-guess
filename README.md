@@ -6,10 +6,12 @@ This app was built using React and Typescript.
 
 ## Local Running
 ### Map Box API 
+Create a [Map Box](https://www.mapbox.com/) account if you do not already have one. 
+
 Create a file titled mapboxConfig.ts in the map component folder:
     `src/components/map/mapboxConfig.ts`
 
-Add the following code with your mapbox api token in it to run locally:
+Add the following code with your [Map Box](https://www.mapbox.com/) api token in it to run locally:
     `export const mapboxApiToken = 'Insert Your API Key Here';`
 
 ### `npm start`
