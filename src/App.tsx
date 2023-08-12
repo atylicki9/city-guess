@@ -7,17 +7,39 @@ import {
 import { NavBar } from "./components/navbar"
 import MapboxMap from "./components/map"
 import { GuessInput } from "./components/input"
+import GameContext from "./context/gameContext";
 import { City } from "./utility/city";
+import { useState } from "react";
 
 export let currentCity = new City();
-export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <NavBar/>
-      <Grid minH="93vh" p={10}>
-        <MapboxMap city={currentCity}/>
-        <GuessInput city={currentCity}/>
-      </Grid>
-    </Box>
+export const App = () => {
+  const [score, setScore] = useState(0);
+  const updateScore = (additionalPoints: number) => {
+    setScore(score + additionalPoints);
+  };
+
+  const [city, setCity] = useState(new City());
+  const updateCity = () => {
+    city.updateCity();
+  };
+
+  return (
+    <ChakraProvider theme={theme}>
+    <GameContext.Provider value={{
+      city: city,
+      score: score,
+      updateCity: () => updateCity(),
+      updateScore: (additionalPoints: number) => updateScore(additionalPoints)
+    }}>
+
+      <Box textAlign="center" fontSize="xl">
+        <NavBar/>
+        <Grid minH="93vh" p={10}>
+          <MapboxMap />
+          <GuessInput />
+        </Grid>
+      </Box>
+    </GameContext.Provider>
   </ChakraProvider>
-)
+  )
+}

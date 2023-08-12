@@ -1,11 +1,12 @@
 import './navbar.css';
-import { ColorModeSwitcher } from './ColorModeSwitcher'
-import { Box, Flex, Spacer, Button } from '@chakra-ui/react'
+import { Box, Flex, Spacer } from '@chakra-ui/react'
+import GameContext from '../../context/gameContext';
+import { useContext } from 'react';
 
 export function NavBar() {
 
     const refreshPage = ( () =>  { window.location.reload() })
-
+    const { score } = useContext(GameContext);
     return (
         <nav className="navbar-container">
             <Flex height="5vh">
@@ -14,7 +15,7 @@ export function NavBar() {
                 </Box>
                 <Spacer  height={1}/>
                 <Box className="navbar-box">
-                    <h1>0 Points</h1>
+                    <h1>{score} Points</h1>
                 </Box>
             </Flex>
         </nav>

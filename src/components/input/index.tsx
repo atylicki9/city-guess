@@ -1,14 +1,13 @@
 import {Flex, Button, Input} from '@chakra-ui/react'
 import './guessinput.css';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { useToast } from '@chakra-ui/react'
 import { City } from '../../utility/city';
+import GameContext from '../../context/gameContext';
 
-interface Props{
-    city: City
-}
+export function GuessInput() {
 
-export function GuessInput(props: Props) {
+    const { city, score, updateCity, updateScore } = useContext(GameContext);
 
     let [value, setValue] = React.useState('')
     const updateText = (event: { target: { value: React.SetStateAction<string>; }; }) => setValue(event.target.value)
@@ -19,31 +18,33 @@ export function GuessInput(props: Props) {
     const handleGuessSubmission = () => {
 
         console.log(`Entered Text: ${value}`)
-        if (props.city.name == null)
+        if (city.name == null)
         {
             throw Error ("Unable to find City Name")
         }
             
-        if (props.city?.name.includes(value)) {
+        if (city?.name.includes(value)) {
             toast({
-                title: 'Correct!',
+                title: 'Correct! +1000 points.',
                 description: "Congrats, that was the correct answer!",
                 status: 'success',
                 duration: 5000,
                 isClosable: true,
               })
-            props.city.updateCity();
+            updateCity();
+            updateScore(1000)
         }
         else {
             
-            console.log(`WRONG, correct answer was ${props.city?.name}`)
+            console.log(`WRONG, correct answer was ${city?.name}`)
             toast({
-                title: 'Wrong.',
+                title: 'Wrong. -100 points',
                 description: "Read a book loser.",
                 status: 'error',
                 duration: 5000,
                 isClosable: true,
               })
+              updateScore(-100)
         }
 
         clearText();
