@@ -21,9 +21,3 @@ Runs the app in the development mode.<br /> Open
 
 The page will reload if you make edits.<br /> You will also see any lint errors
 in the console.
-
-## Future Work 
-1. Fix refresh issue in useEffect for the Map. I would only like the map to refresh when the city changes.
-2. Add an easy, medium and hard more that provides different levels of detail.
-3. Use cookies to make the game into a Wordle style daily game that allows users to track their daily stats and guess a new city every day.
-4. Make mobile friendly.
