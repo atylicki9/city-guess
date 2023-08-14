@@ -1,4 +1,4 @@
-import {Flex, Button, Input} from '@chakra-ui/react'
+import {Flex, Input} from '@chakra-ui/react'
 import './guessinput.css';
 import React, { useContext } from 'react';
 import { useToast } from '@chakra-ui/react'
@@ -12,7 +12,6 @@ export function GuessInput() {
     const updateText = (event: { target: { value: React.SetStateAction<string>; }; }) => setValue(event.target.value)
     const clearText = () => setValue("")
     const toast = useToast()
-    
 
     const handleGuessSubmission = () => {
 
@@ -22,7 +21,6 @@ export function GuessInput() {
             throw Error ("Unable to find City Name")
         }
 
-            
         if (value.trim() != "" && city?.name.includes(value)) {
             toast({
                 title: '+1000 points.',
