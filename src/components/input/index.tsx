@@ -21,8 +21,9 @@ export function GuessInput() {
         {
             throw Error ("Unable to find City Name")
         }
+
             
-        if (city?.name.includes(value)) {
+        if (value.trim() != "" && city?.name.includes(value)) {
             toast({
                 title: '+1000 points.',
                 description: "Correct!, that was the correct answer!",
