@@ -59,14 +59,12 @@ export function GuessInput() {
                 onChange={updateText}
 
             />
-            <Button
-                backgroundColor={"#1A202C"}
-                borderRadius={15}
-                variant={'solid'}
+            <button
+                className="guessButton"
                 onClick={handleGuessSubmission}
             >
                 Guess
-            </Button>
+            </button>
         </Flex>
     )
   }

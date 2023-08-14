@@ -63,16 +63,16 @@
   { "name": "Kuala Lumpur", "latitude": 3.1516964, "longitude": 101.6942371 },
   { "name": "Hanoi", "latitude": 21.0294498, "longitude": 105.8544441 },
   {
-    "name": "Washington, D.C.-Baltimore",
+    "name": "Baltimore",
     "latitude": 39.2908816,
     "longitude": -76.610759
   },
   { "name": "Baghdad", "latitude": 33.3024309, "longitude": 44.3787992 },
   { "name": "Hong Kong", "latitude": 22.2793278, "longitude": 114.1628131 },
   {
-    "name": "Johannesburg–East Rand",
-    "latitude": 35.3732015,
-    "longitude": -117.6432874
+    "name": "Johannesburg",
+    "latitude": -26.195246,
+    "longitude": 28.034088
   },
   {
     "name": "Boston-Providence",
@@ -107,11 +107,6 @@
   { "name": "Saint Petersburg", "latitude": 59.938732, "longitude": 30.316229 },
   { "name": "Guadalajara", "latitude": 20.6720375, "longitude": -103.3383962 },
   { "name": "Barcelona", "latitude": 41.3828939, "longitude": 2.1774322 },
-  {
-    "name": "Belo Horizonte",
-    "latitude": -19.9227318,
-    "longitude": -43.9450948
-  },
   { "name": "Alexandria", "latitude": 31.199004, "longitude": 29.894378 },
   { "name": "Kuwait City", "latitude": 29.3797091, "longitude": 47.9735629 },
   { "name": "Sydney", "latitude": -33.8548157, "longitude": 151.2164539 },
@@ -120,5 +115,8 @@
   { "name": "Phoenix", "latitude": 33.4484367, "longitude": -112.0741417 },
   { "name": "Colombo", "latitude": 6.9349969, "longitude": 79.8538463 },
   { "name": "Monterrey", "latitude": 25.6802019, "longitude": -100.3152586 },
-  { "name": "Ankara", "latitude": 39.9207774, "longitude": 32.854067 }
+  { "name": "Ankara", "latitude": 39.9207774, "longitude": 32.854067 },
+  { "name": "Tampa - St. Petersburg - Saint Petersburg - Clearwater", "latitude": 27.9692, "longitude": -82.4588},
+  { "name": "Washington, D.C. - Washington DC", "latitude": 38.889805, "longitude": -77.009056 },
+  { "name": "Seattle", "latitude": 47.620422, "longitude": -122.349358 }
 ]
