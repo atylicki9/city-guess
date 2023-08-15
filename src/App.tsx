@@ -8,10 +8,12 @@ import { NavBar } from "./components/navbar"
 import MapboxMap from "./components/map"
 import { GuessInput } from "./components/input"
 import GameContext from "./context/gameContext";
-import { City } from "./utility/city";
+import { City, GetCitiesArray } from "./utility/city";
 import { useState } from "react";
 
+export const citiesArray = GetCitiesArray();
 export let currentCity = new City();
+
 export const App = () => {
   const [score, setScore] = useState(0);
   const updateScore = (additionalPoints: number) => {
