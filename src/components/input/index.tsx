@@ -4,7 +4,8 @@ import React, { useContext, useState } from 'react';
 import { useToast } from '@chakra-ui/react'
 import GameContext from '../../context/gameContext';
 import { citiesArray } from '../../App';
-import { FindCities } from '../../utility/city';
+import { FindCities } from '../../utility/searchUtility';
+import { AreCloseEnough } from '../../utility/stringSimilarityUtility';
 
 export function GuessInput() {
 
@@ -41,7 +42,7 @@ export function GuessInput() {
             throw Error ("Unable to find City Name")
         }
 
-        if (value.trim() != "" && city?.name.toUpperCase().includes(value.toUpperCase())) {
+        if (value.trim() != "" && AreCloseEnough(city?.name.toUpperCase(),value.toUpperCase())) {
             toast({
                 title: '+1000 points.',
                 description: "Correct!, that was the correct answer!",
@@ -64,6 +65,7 @@ export function GuessInput() {
         }
 
         clearText();
+        setResult([]);
     }
 
     return (
