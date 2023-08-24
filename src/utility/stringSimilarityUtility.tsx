@@ -1,4 +1,4 @@
-import {distance, closest} from 'fastest-levenshtein'
+import {distance} from 'fastest-levenshtein'
 
 const SIMILARITY_THRESHOLD:number = 2;
 
@@ -8,7 +8,7 @@ export function AreCloseEnough(guess:string, correctAnswer:string): boolean
 {
     let similarityIndex: number = distance(guess, correctAnswer)
     console.log(`Similarity Index: ${similarityIndex}`);
-    if ( similarityIndex <= SIMILARITY_THRESHOLD)
+    if ( similarityIndex <= SIMILARITY_THRESHOLD )
     {
         return true;
     }

@@ -31,15 +31,3 @@ export function GetCitiesArray(): City[]
     const citiesJsonString = JSON.stringify(citiesJson);
     return JSON.parse(citiesJsonString) as City[];
 }
-
-export function FindCities(citiesArray: City[], userInput: string): City[] 
-{
-    var foundCities = new Array;
-    citiesArray.forEach(city => {
-        if (city.name?.toUpperCase().includes(userInput.toUpperCase())) {
-            foundCities.push(city.name)
-        }
-    });
-
-    return foundCities;
-}
