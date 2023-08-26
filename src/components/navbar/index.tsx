@@ -2,6 +2,7 @@ import './navbar.css';
 import { Box, Flex, Spacer } from '@chakra-ui/react'
 import GameContext from '../../context/gameContext';
 import { useContext } from 'react';
+import { HelpButton } from './helpbutton';
 
 export function NavBar() {
 
@@ -16,6 +17,7 @@ export function NavBar() {
                 <Spacer  height={1}/>
                 <Box className="navbar-box">
                     <h1>{score} Points</h1>
+                    <HelpButton/>
                 </Box>
             </Flex>
         </nav>

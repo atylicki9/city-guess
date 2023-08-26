@@ -27,21 +27,21 @@ export const App = () => {
 
   return (
     <ChakraProvider theme={theme}>
-    <GameContext.Provider value={{
-      city: city,
-      score: score,
-      updateCity: () => updateCity(),
-      updateScore: (additionalPoints: number) => updateScore(additionalPoints)
-    }}>
+      <GameContext.Provider value={{
+        city: city,
+        score: score,
+        updateCity: () => updateCity(),
+        updateScore: (additionalPoints: number) => updateScore(additionalPoints)
+      }}>
 
-      <Box textAlign="center" fontSize="xl">
-        <NavBar/>
-        <Grid minH="93vh" p={10}>
-          <MapboxMap />
-          <GuessInput />
-        </Grid>
-      </Box>
-    </GameContext.Provider>
-  </ChakraProvider>
+        <Box textAlign="center" fontSize="xl">
+          <NavBar/>
+          <Grid minH="93vh" p={10}>
+            <MapboxMap />
+            <GuessInput />
+          </Grid>
+        </Box>
+      </GameContext.Provider>
+    </ChakraProvider>
   )
 }

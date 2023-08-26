@@ -12,4 +12,10 @@
     width: 33%;
     height: 100%;
     padding-top: 3vh;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    padding-top: 5px;
 }
