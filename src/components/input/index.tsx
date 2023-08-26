@@ -11,7 +11,7 @@ export function GuessInput() {
 
     const { city, updateCity, updateScore } = useContext(GameContext);
 
-    let [value, setValue] = useState('');
+    const [value, setValue] = useState('');
     const [result, setResult] = useState(new Array);
 
     const onItemSelection: any = (event: { target: { innerText: React.SetStateAction<string>; }; }) => {
