@@ -8,6 +8,29 @@ export interface Coords {
     longitude: number;
   }
   
+function setMapStyleByDifficulty(difficulty: string): string {
+  console.log(difficulty)
+
+  switch(difficulty) { 
+    case "Easy": { 
+      return "mapbox://styles/atylicki/cllst95u600rr01p71cw06b59";
+    } 
+    case "Medium": { 
+      return "mapbox://styles/atylicki/cllst6hbb00t801qb00bo9vj3";
+    } 
+    case "Hard": {
+      return "mapbox://styles/atylicki/clkq8f6ac01i401p21tpg1krd";
+    }
+    case "Impossible": {
+      return "mapbox://styles/atylicki/cllswuswr00vz01qihq539nf8";
+    }
+    default: { 
+      console.log("Using default map style.")
+      return "mapbox://styles/atylicki/clkq8f6ac01i401p21tpg1krd";
+    } 
+  } 
+}
+
 function calculateBoundingBox(city: City): mapboxgl.LngLatBoundsLike {
 
   if (city.latitude == undefined || city.longitude == undefined)
@@ -23,4 +46,4 @@ function calculateBoundingBox(city: City): mapboxgl.LngLatBoundsLike {
     return [[west, south], [east, north]];
 }
 
-export {  calculateBoundingBox }
+export {  calculateBoundingBox, setMapStyleByDifficulty }

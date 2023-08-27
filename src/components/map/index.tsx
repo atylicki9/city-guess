@@ -1,13 +1,13 @@
 import './map.css';
 import React, { useContext, useEffect } from 'react';
 import mapboxgl, { Map } from 'mapbox-gl';
-import {calculateBoundingBox} from '../../utility/mapUtility'
+import {calculateBoundingBox, setMapStyleByDifficulty} from '../../utility/mapUtility'
 import GameContext from '../../context/gameContext';
 import { mapboxApiToken } from './mapboxConfig';
 
 const MapboxMap: React.FC = () => {
   
-  const { city, updateCity } = useContext(GameContext);
+  const { city, difficulty, updateDifficulty } = useContext(GameContext);
     if (city.latitude == undefined || city.longitude == undefined)
     {
       throw Error(`There is an underfined coordinate in ${city.name}`)
@@ -18,13 +18,13 @@ const MapboxMap: React.FC = () => {
       mapboxgl.accessToken = mapboxApiToken; 
       const map: Map = new mapboxgl.Map({
         container: 'map', 
-        style: 'mapbox://styles/atylicki/clkq8f6ac01i401p21tpg1krd',
+        style: setMapStyleByDifficulty(difficulty),
         zoom: 7,
         maxBounds: calculateBoundingBox(city)
       });
   
       return () => map.remove();
-    }, [city.name]);
+    }, [city.name, updateDifficulty ]);
   
     return <div id="map" className='mapboxMap'/>;
   };

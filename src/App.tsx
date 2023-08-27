@@ -21,19 +21,22 @@ export const App = () => {
   };
 
   const [city, setCity] = useState(new City());
-  const updateCity = () => {
-    city.updateCity();
-  };
-
+  const updateCity = () => city.updateCity();
+  
+  const [difficulty, setDifficulty] = useState("Hard");
+  const updateDifficulty = (newDifficulty: string) => {
+    setDifficulty(newDifficulty);
+  }
   return (
     <ChakraProvider theme={theme}>
       <GameContext.Provider value={{
+        difficulty: difficulty,
         city: city,
         streak: streak,
+        updateDifficulty: (newDifficulty: string) => updateDifficulty(newDifficulty),
         updateCity: () => updateCity(),
         updateStreak: (additionalPoints: number) => updateStreak(additionalPoints)
       }}>
-
         <Box textAlign="center" fontSize="xl">
           <NavBar/>
           <Grid minH="93vh" p={10}>
