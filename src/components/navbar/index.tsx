@@ -16,7 +16,7 @@ export function NavBar() {
                 </Box>
                 <Spacer  height={1}/>
                 <Box className="navbar-box">
-                    <h1>Streak: {streak}   </h1>
+                    <h1>Streak: {streak}</h1>
                     <HelpButton/>
                 </Box>
             </Flex>

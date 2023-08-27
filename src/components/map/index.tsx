@@ -24,7 +24,7 @@ const MapboxMap: React.FC = () => {
       });
   
       return () => map.remove();
-    }, [updateCity]);
+    }, [city.name]);
   
     return <div id="map" className='mapboxMap'/>;
   };
