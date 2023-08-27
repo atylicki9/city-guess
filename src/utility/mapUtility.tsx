@@ -1,5 +1,3 @@
-// todo merge with city
-
 import mapboxgl from "mapbox-gl";
 import { City } from "./city";
 
