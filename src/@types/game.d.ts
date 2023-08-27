@@ -2,7 +2,7 @@ import { City } from "./city";
 
 export interface IGame {
     city: City?;
-    score: number;
-    updateScore: (additionalPoints: number) => void?;
+    streak: number;
+    updateStreak: (additionalPoints: number) => void?;
     updateCity: () => void?;
 }

@@ -7,7 +7,7 @@ import { HelpButton } from './helpbutton';
 export function NavBar() {
 
     const refreshPage = ( () =>  { window.location.reload() })
-    const { score } = useContext(GameContext);
+    const { streak } = useContext(GameContext);
     return (
         <nav className="navbar-container">
             <Flex height="5vh">
@@ -16,7 +16,7 @@ export function NavBar() {
                 </Box>
                 <Spacer  height={1}/>
                 <Box className="navbar-box">
-                    <h1>{score} Points</h1>
+                    <h1>Streak: {streak}   </h1>
                     <HelpButton/>
                 </Box>
             </Flex>

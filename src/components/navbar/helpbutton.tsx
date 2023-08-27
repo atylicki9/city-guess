@@ -14,7 +14,8 @@ export function HelpButton() {
             <ModalCloseButton />
             <ModalBody>
               The game is simple. Based on the map provided, guess the city. 
-              Each correct answer is worth 1000 points and each incorrect answer is -100 points. <br/><br/>
+              Each correct answer will add to your streak and any wrong answers will set the 
+              streak back to 0. <br/><br/>
 
               Enjoy!
             </ModalBody>

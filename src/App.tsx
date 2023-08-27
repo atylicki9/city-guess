@@ -15,9 +15,9 @@ export const citiesArray = GetCitiesArray();
 export let currentCity = new City();
 
 export const App = () => {
-  const [score, setScore] = useState(0);
-  const updateScore = (additionalPoints: number) => {
-    setScore(score + additionalPoints);
+  const [streak, setStreak] = useState(0);
+  const updateStreak = (additionalPoints: number) => {
+    setStreak((streak  * additionalPoints) + additionalPoints); // will reset to 0 if wrong answer, otherwise will add 1
   };
 
   const [city, setCity] = useState(new City());
@@ -29,9 +29,9 @@ export const App = () => {
     <ChakraProvider theme={theme}>
       <GameContext.Provider value={{
         city: city,
-        score: score,
+        streak: streak,
         updateCity: () => updateCity(),
-        updateScore: (additionalPoints: number) => updateScore(additionalPoints)
+        updateStreak: (additionalPoints: number) => updateStreak(additionalPoints)
       }}>
 
         <Box textAlign="center" fontSize="xl">

@@ -4,8 +4,8 @@ import { IGame } from '../@types/game';
 const newGameState: IGame =
 {
     city: null,
-    score: 0,
-    updateScore: function (additionalPoints: number): void | null {
+    streak: 0,
+    updateStreak: function (additionalPoints: number): void | null {
         throw new Error('Function not implemented.');
     },
     updateCity: function (): void | null {

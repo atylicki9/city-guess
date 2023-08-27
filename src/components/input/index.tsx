@@ -9,7 +9,7 @@ import { AreCloseEnough } from '../../utility/stringSimilarityUtility';
 
 export function GuessInput() {
 
-    const { city, updateCity, updateScore } = useContext(GameContext);
+    const { city, updateCity, updateStreak } = useContext(GameContext);
 
     const [value, setValue] = useState('');
     const [result, setResult] = useState(new Array);
@@ -44,24 +44,24 @@ export function GuessInput() {
 
         if (value.trim() != "" && AreCloseEnough(city?.name.toUpperCase(),value.toUpperCase())) {
             toast({
-                title: '+1000 points.',
-                description: "Correct!, that was the correct answer!",
+                title: 'Correct!',
+                description: "That was the right answer!",
                 status: 'success',
-                duration: 5000,
+                duration: 4000,
                 isClosable: true,
               })
             updateCity();
-            updateScore(1000)
+            updateStreak(1)
         }
         else {
             toast({
-                title: '-100 points',
-                description: "Read a book loser.",
+                title: 'Wrong',
+                description: "Sorry! Please try again.",
                 status: 'error',
-                duration: 5000,
+                duration: 4000,
                 isClosable: true,
               })
-              updateScore(-100)
+              updateStreak(0)
         }
 
         clearText();
@@ -70,28 +70,28 @@ export function GuessInput() {
 
     return (
         <Flex className="inputFlex"> 
-        <div className='wrapper'>
-            <Input
-                value={value}
-                textColor={"white"}
-                marginRight={15}
-                borderRadius={15}
-                backgroundColor={"#1A202C"}
-                onChange={updateText}
+            <div className='wrapper'>
+                <Input
+                    value={value}
+                    textColor={"white"}
+                    marginRight={15}
+                    borderRadius={15}
+                    backgroundColor={"#1A202C"}
+                    onChange={updateText}
 
-            />
-            <div className="list">
-            {result.map((item, index) => (
-                <div className="list-item"
-                    key={index}
-                    id={`list-item-${index}`}
-                    onClick={onItemSelection}
-                >
-                {item}
+                />
+                <div className="list">
+                    {result.map((item, index) => (
+                    <div className="list-item"
+                        key={index}
+                        id={`list-item-${index}`}
+                        onClick={onItemSelection}
+                    >
+                    {item}
+                    </div>
+                ))}
                 </div>
-   ))}
             </div>
-        </div>
             <button
                 className="guessButton"
                 onClick={handleGuessSubmission}
