@@ -10,6 +10,7 @@ import { GuessInput } from "./components/input"
 import GameContext from "./context/gameContext";
 import { City, GetCitiesArray } from "./utility/city";
 import { useState } from "react";
+import { STREAK_LOCAL_STORAGE_ITEM } from "./common/constants";
 
 export const citiesArray = GetCitiesArray();
 export let currentCity = new City();
@@ -20,18 +21,18 @@ export const App = () => {
 
   function getInitialStreak(): number
   {
-    if(!localStorage.getItem("CityGuessStreak"))
+    if(!localStorage.getItem(STREAK_LOCAL_STORAGE_ITEM))
       {
-        localStorage.setItem("CityGuessStreak", "0")
+        localStorage.setItem(STREAK_LOCAL_STORAGE_ITEM, "0")
         return 0;
       }
-    return Number(localStorage.getItem("CityGuessStreak"));
+    return Number(localStorage.getItem(STREAK_LOCAL_STORAGE_ITEM));
   }
 
   const updateStreak = (additionalPoints: number) => {
     const newStreak: number = ((streak  * additionalPoints) + additionalPoints);
     setStreak(newStreak); // will reset to 0 if wrong answer, otherwise will add 1
-    localStorage.setItem("CityGuessStreak", newStreak.toString());
+    localStorage.setItem(STREAK_LOCAL_STORAGE_ITEM, newStreak.toString());
   };
 
   const [city, setCity] = useState(new City());
