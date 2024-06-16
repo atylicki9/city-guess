@@ -9,8 +9,8 @@
 }
 
 .navbar-box {
-    width: 33%;
-    height: 100%;
+    width: 33vw;
+    height: 100vh;
     padding-top: 3vh;
     display: flex;
     justify-content: center;

@@ -15,9 +15,23 @@ export const citiesArray = GetCitiesArray();
 export let currentCity = new City();
 
 export const App = () => {
-  const [streak, setStreak] = useState(0);
+
+  const [streak, setStreak] = useState(getInitialStreak());
+
+  function getInitialStreak(): number
+  {
+    if(!localStorage.getItem("CityGuessStreak"))
+      {
+        localStorage.setItem("CityGuessStreak", "0")
+        return 0;
+      }
+    return Number(localStorage.getItem("CityGuessStreak"));
+  }
+
   const updateStreak = (additionalPoints: number) => {
-    setStreak((streak  * additionalPoints) + additionalPoints); // will reset to 0 if wrong answer, otherwise will add 1
+    const newStreak: number = ((streak  * additionalPoints) + additionalPoints);
+    setStreak(newStreak); // will reset to 0 if wrong answer, otherwise will add 1
+    localStorage.setItem("CityGuessStreak", newStreak.toString());
   };
 
   const [city, setCity] = useState(new City());
