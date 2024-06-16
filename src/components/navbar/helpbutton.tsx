@@ -2,6 +2,7 @@ import { SettingsIcon } from "@chakra-ui/icons"
 import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, useDisclosure } from "@chakra-ui/react"
 import GameContext from '../../context/gameContext';
 import React, { useContext, useState } from 'react';
+import { DIFFICULTY_EASY, DIFFICULTY_HARD, DIFFICULTY_IMPOSSIBLE, DIFFICULTY_MEDIUM } from "../../common/constants";
 
 export function HelpButton() {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -29,10 +30,10 @@ export function HelpButton() {
             </ModalBody>
             <ModalHeader>Difficulty</ModalHeader>
             <Select value={dropdownDifficulty}  onChange={e => changeDifficulty(e.target.value)} width='80%' margin='auto'>
-              <option value='Easy'>Easy</option>
-              <option value='Medium'>Medium</option>
-              <option value='Hard'>Hard</option>
-              <option value='Impossible'>Impossible</option>
+              <option value={DIFFICULTY_EASY}>Easy</option>
+              <option value={DIFFICULTY_MEDIUM}>Medium</option>
+              <option value={DIFFICULTY_HARD}>Hard</option>
+              <option value={DIFFICULTY_IMPOSSIBLE}>Impossible</option>
             </Select>
             <ModalFooter>
               <Button colorScheme='blue' mr={3} onClick={onClose}>

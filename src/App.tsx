@@ -10,7 +10,7 @@ import { GuessInput } from "./components/input"
 import GameContext from "./context/gameContext";
 import { City, GetCitiesArray } from "./utility/city";
 import { useState } from "react";
-import { STREAK_LOCAL_STORAGE_ITEM } from "./common/constants";
+import { DIFFICULTY_HARD, STREAK_LOCAL_STORAGE_ITEM } from "./common/constants";
 
 export const citiesArray = GetCitiesArray();
 export let currentCity = new City();
@@ -38,10 +38,11 @@ export const App = () => {
   const [city, setCity] = useState(new City());
   const updateCity = () => city.updateCity();
   
-  const [difficulty, setDifficulty] = useState("Hard");
+  const [difficulty, setDifficulty] = useState(DIFFICULTY_HARD);
   const updateDifficulty = (newDifficulty: string) => {
     setDifficulty(newDifficulty);
   }
+
   return (
     <ChakraProvider theme={theme}>
       <GameContext.Provider value={{
