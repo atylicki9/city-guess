@@ -1,7 +1,7 @@
 /*map styles*/
 
 .mapboxMap {
-    width: 100%;
+    width: 80vw;
     height: 80vh;
     margin: 0 auto;
 }

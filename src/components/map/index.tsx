@@ -10,7 +10,7 @@ const MapboxMap: React.FC = () => {
   const { city, difficulty, updateDifficulty } = useContext(GameContext);
     if (city.latitude == undefined || city.longitude == undefined)
     {
-      throw Error(`There is an underfined coordinate in ${city.name}`)
+      throw Error(`There is an undefined coordinate in ${city.name}`)
     }
     
     useEffect(() => {

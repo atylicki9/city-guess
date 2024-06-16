@@ -8,9 +8,7 @@ import { FindCities } from '../../utility/searchUtility';
 import { AreCloseEnough } from '../../utility/stringSimilarityUtility';
 
 export function GuessInput() {
-
     const { city, updateCity, updateStreak } = useContext(GameContext);
-
     const [value, setValue] = useState('');
     const [result, setResult] = useState(new Array);
 
@@ -22,7 +20,6 @@ export function GuessInput() {
     const updateText = (event: { target: { value: any; }; }) => {
         const userInput = event.target.value;
         setValue(userInput);
-       // search cities json
        if (citiesArray == null)
        {
            throw Error ("City array is empty");
