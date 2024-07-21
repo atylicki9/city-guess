@@ -2,7 +2,7 @@ import {distance} from 'fastest-levenshtein'
 
 const SIMILARITY_THRESHOLD:number = 2;
 
-// Will return true or false of whether strings are withing a Levenshtein-distance of 3.
+// Will return true or false of whether strings are within a Levenshtein-distance of 3.
 // Uses Levenshtein distance algorithm.
 export function AreCloseEnough(guess: string, correctAnswer: string): boolean
 {
